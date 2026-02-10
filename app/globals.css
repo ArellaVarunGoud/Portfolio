@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 93%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 93%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 93%;
+    --primary: 0 0% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 78%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 187 72% 48%;
+    --accent-foreground: 0 0% 6%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 187 72% 48%;
+    --chart-1: 187 72% 48%;
+    --chart-2: 0 0% 50%;
+    --chart-3: 210 10% 40%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 78%;
+    --sidebar-primary: 187 72% 48%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 78%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 187 72% 48%;
+  }
+}
+
+/* Water fill button */
+@layer components {
+  .btn-water-fill {
+    @apply relative overflow-hidden transition-all duration-500;
+  }
+  .btn-water-fill::before {
+    content: '';
+    @apply absolute inset-0 transition-transform duration-500 ease-out;
+    transform: translateY(100%);
+  }
+  .btn-water-fill:hover::before {
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
